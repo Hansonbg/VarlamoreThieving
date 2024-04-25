@@ -14,7 +14,7 @@ import net.runelite.client.plugins.PluginDescriptor;
 
 @Slf4j
 @PluginDescriptor(
-	name = "Example"
+	name = "Varlamore Thieving"
 )
 public class VarlamoreThievingPlugin extends Plugin
 {
