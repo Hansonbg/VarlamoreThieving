@@ -1,4 +1,4 @@
-package com.varlamorethieving;
+package com.barclid;
 
 import com.google.inject.Provides;
 import javax.inject.Inject;
@@ -14,15 +14,17 @@ import net.runelite.client.plugins.PluginDescriptor;
 
 @Slf4j
 @PluginDescriptor(
-	name = "Varlamore Thieving"
+	name = "Prayer Drain Calculator"
 )
-public class VarlamoreThievingPlugin extends Plugin
+public class PrayerDrainPlugin extends Plugin
 {
+	static final String CONFIG_GROUP = "PrayerDrain";
+
 	@Inject
 	private Client client;
 
 	@Inject
-	private VarlamoreThievingConfig config;
+	private PrayerDrainConfig config;
 
 	@Override
 	protected void startUp() throws Exception
@@ -41,13 +43,13 @@ public class VarlamoreThievingPlugin extends Plugin
 	{
 		if (gameStateChanged.getGameState() == GameState.LOGGED_IN)
 		{
-			client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "Example says " + config.greeting(), null);
+			client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "Example says " + config.showCountdown(), null);
 		}
 	}
 
 	@Provides
-	VarlamoreThievingConfig provideConfig(ConfigManager configManager)
+    PrayerDrainConfig provideConfig(ConfigManager configManager)
 	{
-		return configManager.getConfig(VarlamoreThievingConfig.class);
+		return configManager.getConfig(PrayerDrainConfig.class);
 	}
 }

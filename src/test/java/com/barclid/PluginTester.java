@@ -1,13 +1,13 @@
-package com.varlamorethieving;
+package com.barclid;
 
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;
 
-public class VarlamoreThievingPluginTest
+public class PluginTester
 {
 	public static void main(String[] args) throws Exception
 	{
-		ExternalPluginManager.loadBuiltin(VarlamoreThievingPlugin.class);
+		ExternalPluginManager.loadBuiltin(PrayerDrainPlugin.class);
 		RuneLite.main(args);
 	}
 }
